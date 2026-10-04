@@ -680,32 +680,18 @@
 
     <script>
         /* =========================
-                                           LIVE CALENDAR (DATE, MONTH, YEAR, WEEKDAY)
-                                        ========================= */
+                                                   LIVE CALENDAR (DATE, MONTH, YEAR, WEEKDAY)
+                                                ========================= */
 
         function updateCalendar() {
-            const now = new Date();
-
-            const day = now.getDate();
-            const month = now.toLocaleString('en-US', {
-                month: 'long'
-            });
-            const year = now.getFullYear();
-            const weekday = now.toLocaleString('en-US', {
-                weekday: 'long'
-            });
-
-            document.getElementById('calDay').textContent = day;
-            document.getElementById('calMonth').textContent = month;
-            document.getElementById('calYear').textContent = year;
-            document.getElementById('calWeekday').textContent = weekday;
+            // Fixed birthday date requested by you
+            document.getElementById('calDay').textContent = '2';
+            document.getElementById('calMonth').textContent = 'September';
+            document.getElementById('calYear').textContent = '2026';
+            document.getElementById('calWeekday').textContent = 'Friday';
         }
 
-        // Initial update
         updateCalendar();
-
-        // Update every second (in case of midnight rollover)
-        setInterval(updateCalendar, 1000);
 
 
         /* =========================
